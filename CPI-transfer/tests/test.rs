@@ -110,7 +110,7 @@ async fn success() {
     );
     banks_client.process_transaction(transaction).await.unwrap();
 
-    let for_pad_amount = 5_000;
+    let for_pda_amount = 50_000;
 
     // Mint some tokens to the PDA account
     let transaction = Transaction::new_signed_with_payer(
@@ -120,7 +120,7 @@ async fn success() {
             &source.pubkey(),
             &payer.pubkey(),
             &[],
-            for_pad_amount,
+            for_pda_amount,
         )
         .unwrap()],
         Some(&payer.pubkey()),
